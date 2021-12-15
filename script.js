@@ -22,9 +22,20 @@ document.querySelector('.btnReset').addEventListener('click', () => {
     e.setAttribute('style', 'background-color: #F2F2F2');
   });
 });
+document.querySelector('.btnGrid').addEventListener('click', () => {
+  let size = prompt('Enter the number of squares for each row');
+  if (size === null) { return; }
+  size = parseInt(size);
+  while (isNaN(size)) {
+    size = prompt('That is not a number! Try again');
+    if (size == null) { return }
+  }
+  setSquares(parseInt(size));
+});
 // -- -- //
 
 setSquareListener();
+
 
 // -- functions -- //
 function randomColour(colour) {
@@ -37,3 +48,9 @@ function setSquareListener() {
     });
   });
 }
+function setSquares(numOfRowSquares) {
+  squares.forEach(e => {
+    e.remove()
+  });
+}
+// -- -- //

@@ -129,3 +129,9 @@ button:active {
   text-align: center;
   margin: -25px 0px 15px 0;
 }
+
+#footer:hover {
+  text-decoration-line: underline;
+  color: #416CA6;
+  cursor: pointer;
+}

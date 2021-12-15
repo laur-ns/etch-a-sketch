@@ -31,6 +31,9 @@ document.querySelector('.btnGrid').addEventListener('click', () => {
   }
   setSquares(parseInt(size));
 });
+document.querySelector('#footer').addEventListener('click', () => {
+  window.open('https://github.com/laur-ns/TOP-etch-a-sketch');
+});
 // -- -- //
 
 setSquareListener();

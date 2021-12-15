@@ -3,7 +3,7 @@
 Etch a sketch project.
 [Live Demo](https://laur-ns.github.io/TOP-etch-a-sketch)
 
-#Planning stage:
+# Planning stage:
 get the width of sketchbox
 add eventlisteners to each square
 when button grid size is clicked, display prompt

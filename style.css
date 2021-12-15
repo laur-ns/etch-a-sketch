@@ -58,7 +58,7 @@ a:hover {
   padding: 0 2% 0 2%;
 }
 
-button {
+button, .colourPicker {
   font-family: 'Roboto', sans-serif;
   letter-spacing: .050rem;
   color: #ffffff;
@@ -69,6 +69,18 @@ button {
   background: #7f8392;
   border: none;
   border-radius: 6px;
+}
+
+.colourPicker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.setColour {
+  margin-left: 10px;
+  height: 45px;
+  width: 80px;
 }
 
 button:hover {

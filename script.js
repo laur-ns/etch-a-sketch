@@ -37,6 +37,7 @@ document.querySelector('#footer').addEventListener('click', () => {
 // -- -- //
 
 setSquareListener();
+setSquares(16);
 
 // -- functions -- //
 function randomColour(colour) {

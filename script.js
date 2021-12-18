@@ -67,7 +67,7 @@ function setSquares(numOfRowSquares) {
   for (let i = 0; i < totalSquares; i++) {
     parentNode.appendChild(square.cloneNode());
   }
-  let squareWidth = sketchBoxWidth / numOfRowSquares;
+  let squareWidth = Math.trunc(sketchBoxWidth / numOfRowSquares);
   squares = document.querySelectorAll('.square');
   squares.forEach(e => {
     e.style.width =`${squareWidth}px`;

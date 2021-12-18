@@ -1,23 +1,27 @@
 let sketchBoxWidth = document.querySelector('.sketchBox').clientWidth;
 let setColour = document.querySelector('.setColour').getAttribute('value');
 let squares = document.querySelectorAll('.square');
+let toggleDraw;
+document.onmousedown = () => { toggleDraw = true; }
+document.onmouseup = () => { toggleDraw = false; }
+
 
 // -- Event listeners -- //
 document.querySelector('.setColour').addEventListener('change', (e) => {
   squares.forEach(e => {
-  e.removeEventListener('mousemove', randomColour);
+  e.removeEventListener('mouseenter', randomColour);
   });
   setColour = e.target.value;
 });
 document.querySelector('.btnEraser').addEventListener('click', () => {
   squares.forEach(e => {
-    e.removeEventListener('mousemove', randomColour);
+    e.removeEventListener('mouseenter', randomColour);
     });
   setColour = '#F2F2F2';
 });
 document.querySelector('.btnRainbow').addEventListener('click', () => {
   squares.forEach(e => {
-    e.addEventListener('mousemove', randomColour);
+    e.addEventListener('mouseenter', randomColour);
   });
 });
 document.querySelector('.btnReset').addEventListener('click', resetGrid);
@@ -41,6 +45,7 @@ setSquares(16);
 
 // -- functions -- //
 function randomColour(colour) {
+  if (!toggleDraw) { return }
   colour.target.style.backgroundColor = 
     `#${Math.floor(Math.random()*16777215).toString(16)}`;
 }
@@ -51,8 +56,8 @@ function resetGrid() {
 }
 function setSquareListener() {
   squares.forEach(e => {
-    e.addEventListener('mousemove', (e) => {
-      // e.target.setAttribute('style', `background-color: ${setColour};`);
+    e.addEventListener('mouseenter', (e) => {
+      if (!toggleDraw) { return}
       e.target.style.backgroundColor = `${setColour}`
     });
   });
